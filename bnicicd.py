@@ -1,8 +1,12 @@
 import requests
+from datetime import datetime
 
 print ("hello word")
 print ("testing cicd bni")
 
 response = requests.get("https://www.google.com")
 
-print (response.text)
+waktu = datetime.now()
+
+with open("tempRespones/"+str(waktu)+".txt","w") as f:
+    f.write(response.text)
